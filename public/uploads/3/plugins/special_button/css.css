@@ -1,0 +1,83 @@
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: -webkit-linear-gradient(right top, #3FC1C9, #364F6B);
+  background: linear-gradient(to left bottom, #3FC1C9, #364F6B);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  display: inline-block;
+  background: none;
+  border: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  padding: 1em 2em;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #F5F5F5;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  box-shadow: inset 0 0 0 4px #F5F5F5, 0 0 1px 1px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer !important;
+}
+button:before, button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+button:before {
+  border-color: #FC5185 transparent;
+  -webkit-transform: skewX(-81deg);
+          transform: skewX(-81deg);
+}
+button:after {
+  border-color: transparent #FC5185;
+  -webkit-transform: skewY(40deg);
+          transform: skewY(40deg);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+button:hover {
+  color: #FC5185;
+}
+button:hover:before, button:hover:after {
+  -webkit-transform: none;
+          transform: none;
+}

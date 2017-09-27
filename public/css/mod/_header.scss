@@ -1,0 +1,38 @@
+.navbar{
+  margin-bottom: 0;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+
+
+
+.user_info{
+  height: 50px;
+  line-height: 50px;
+  padding-right: 15px;
+  padding-left: 35px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+  .user_logo{
+    width: 28px;
+    height: 28px;
+    background-image: url('/img/userlogo_default.png');
+    position: absolute;
+    top: 11px;
+    left: 0px;
+  }
+  .user_name{
+    height: 100%;
+    color: rgb(51, 122, 183);
+  }
+  .user_arrow{
+    width: 12px;
+    height: 12px;
+    background-image: url('/img/icons.png');
+    background-position: -9px -97px;
+    position: absolute;
+    top: 19px;
+    right: 0px;
+  }
+}

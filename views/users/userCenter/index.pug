@@ -1,0 +1,293 @@
+extends ../../layout
+
+block styles
+  link(rel='stylesheet', href='/pc/css/users/userCenter/index.css')
+block scripts
+  script(src='/pc/js/users/userCenter/index.min.js')
+
+block content
+  //--------------------我的js插件 start------------------------------------
+  div.panel.panel-info
+    div.panel-heading
+      h3.panel-title 我的javascript插件
+    div.panel-body
+      div.toolbar
+        button.btn.btn-info(type="button",data-toggle="modal",data-target="#pluginsModal") 上传插件
+      table.table.table-striped.table-hover.pluginTable
+        thead
+          tr
+            th.index 序号
+            th.title 英文名
+            th.ctitle 中文名
+            th.code 代码
+            th.des 描述
+            th.date 日期
+            th.operation 操作
+        tbody
+          each plugin, index in jsplugins.data
+            tr
+              th= index+1
+              td= plugin.title
+              td= plugin.ctitle
+              td
+                div.multi-line= plugin.code
+              td
+                div.multi-line= plugin.description
+              td= plugin.date
+              td
+                a.btn_del_work(href='/plugins/delPlugin/'+plugin.id) 删除
+
+      - var jspluginsTotalPage = Math.ceil(jsplugins.total / 10);
+      if jspluginsTotalPage > 0
+        div.my_pager#pluginPager
+          ul.pagination
+            li.disabled
+              a(href='javascript:void(0);',aria-label="Previous")
+                span(aria-hidden="true") «
+            li.active
+              a(href='javascript:void(0);') 1
+            if jspluginsTotalPage < 11
+              - var i=2;
+              while i <= jspluginsTotalPage
+                li
+                  a(href='javascript:void(0);', page=i)= i++
+            else
+              - var i=2;
+              while i <= 3
+                li
+                  a(href='javascript:void(0);', page=i)= i++
+
+              li
+               div(style="float: left;width: 34px;height: 34px;line-height: 34px;text-align: center;") ...
+
+              - i=jspluginsTotalPage-2;
+              while i <=jspluginsTotalPage
+                li
+                  a(href='javascript:void(0);', page=i)= i++
+            li(class=(jspluginsTotalPage > 1 ? '': 'disabled'))
+              a(href='javascript:void(0);',aria-label="Next", page=(jspluginsTotalPage > 1 ? '2': ''))
+                span(aria-hidden="true") »
+
+
+
+  //--------------------我的组件 start------------------------------------
+  div.panel.panel-info
+    div.panel-heading
+      h3.panel-title 我的组件
+    div.panel-body
+      div.toolbar
+        button.btn.btn-info(type="button",data-toggle="modal",data-target="#componentsModal") 上传组件
+      table.table.table-striped.table-hover.componentTable
+        thead
+          tr
+            th.index 序号
+            th.title 英文名
+            th.ctitle 中文名
+            th.code 代码
+            th.des 描述
+            th.date 日期
+            th.operation 操作
+        tbody
+          each component, index in components.data
+            tr
+              th= index+1
+              td= component.title
+              td= component.ctitle
+              td
+                div.multi-line= component.code
+              td
+                div.multi-line= component.description
+              td= component.date
+              td
+                a.btn_del_work(href='/components/delComponent/'+component.id) 删除
+
+      - var componentsTotalPage = Math.ceil(components.total / 10);
+        if componentsTotalPage > 0
+          div.my_pager#componentPager
+            ul.pagination
+              li.disabled
+                a(href='javascript:void(0);',aria-label="Previous")
+                  span(aria-hidden="true") «
+              li.active
+                a(href='javascript:void(0);') 1
+              if componentsTotalPage < 11
+                - var i=2;
+                while i <= componentsTotalPage
+                  li
+                    a(href='javascript:void(0);', page=i)= i++
+              else
+                - var i=2;
+                while i <= 3
+                  li
+                    a(href='javascript:void(0);', page=i)= i++
+
+                li
+                 div(style="float: left;width: 34px;height: 34px;line-height: 34px;text-align: center;") ...
+
+                - i=componentsTotalPage-2;
+                while i <=componentsTotalPage
+                  li
+                    a(href='javascript:void(0);', page=i)= i++
+              li(class=(componentsTotalPage > 1 ? '': 'disabled'))
+                a(href='javascript:void(0);',aria-label="Next", page=(componentsTotalPage > 1 ? '2': ''))
+                  span(aria-hidden="true") »
+
+
+  //--------------------我的website start------------------------------------
+  div.panel.panel-info
+    div.panel-heading
+      h3.panel-title 我的website作品
+    div.panel-body
+      div.toolbar
+        button.btn.btn-info(type="button",data-toggle="modal",data-target="#websitesModal") 上传作品
+      table.table.table-striped.table-hover.websiteTable
+        thead
+          tr
+            th.index 序号
+            th.filename 作品英文名
+            th.subject_name 作品中文名
+            th.description 描述
+            th.date 上传日期
+            th.operation 操作
+        tbody
+          each website, index in websites.data
+            tr
+              th= index+1
+              td
+                a(href="/uploads/"+website.userid+"/websites/"+website.subject_name+"/index.html",target="_blank")= website.filename
+              td= website.subject_name
+              td
+                div.multi-line= website.subject_description
+              td= website.date
+              td
+                a.btn_del_work(href='/websites/delWebsite/'+website.id) 删除
+
+      - var websitesTotalPage = Math.ceil(websites.total / 10);
+        if websitesTotalPage > 0
+          div.my_pager#websitePager
+            ul.pagination
+              li.disabled
+                a(href='javascript:void(0);',aria-label="Previous")
+                  span(aria-hidden="true") «
+              li.active
+                a(href='javascript:void(0);') 1
+              if websitesTotalPage < 11
+                - var i=2;
+                while i <= websitesTotalPage
+                  li
+                    a(href='javascript:void(0);', page=i)= i++
+              else
+                - var i=2;
+                while i <= 3
+                  li
+                    a(href='javascript:void(0);', page=i)= i++
+
+                li
+                 div(style="float: left;width: 34px;height: 34px;line-height: 34px;text-align: center;") ...
+
+                - i=websitesTotalPage-2;
+                while i <=websitesTotalPage
+                  li
+                    a(href='javascript:void(0);', page=i)= i++
+              li(class=(websitesTotalPage > 1 ? '': 'disabled'))
+                a(href='javascript:void(0);',aria-label="Next", page=(websitesTotalPage > 1 ? '2': ''))
+                  span(aria-hidden="true") »
+
+
+
+  div.modal.fade(id="websitesModal",tabindex="-1",role="dialog",aria-labelledby="websitesModalLabel")
+    div.modal-dialog(role="document")
+      div.modal-content
+        form(role="form",action="/websites/uploadWebsite",method="post",enctype='multipart/form-data',id='form_uploadWebsite')
+          div.modal-header
+            button.close(type="button",data-dismiss="modal",aria-label="Close")
+            h4.modal-title(id="websitesModalLabel") upload dialog
+          div.modal-body
+              div.form-group
+                label.control-label(for="subject_name") 作品名称:(暂时不支持中文，不能含有空格等特殊字符。)
+                input.form-control(type="text",id="subject_name",name="subject_name")
+              div.form-group
+                label.control-label(for="subject_description") 作品描述:
+                textarea.form-control(id="subject_description",name="subject_description")
+              div.form-group
+                label.control-label(for="file") 作品文件:
+                input(type="file",id="file",name="file",multiple='mutiple')
+                p.help-block 注意：上传文件格式ZIP，包内根目录必须有入口文件为index.html，此入口文件不能放在文件夹中.
+          div.modal-footer
+            button.btn.btn-default(type="button",data-dismiss="modal") Close
+            button.btn.btn-primary(type="submit") upload
+
+
+  div.modal.fade.bs-example-modal-lg(id="componentsModal",tabindex="-1",role="dialog",aria-labelledby="componentsModalLabel")
+    div.modal-dialog.modal-lg(role="document")
+      div.modal-content
+        form(role="form",action="/components/uploadComponent",method="post",enctype='multipart/form-data',id='form_uploadComponent')
+          div.modal-header
+            button.close(type="button",data-dismiss="modal",aria-label="Close")
+            h4.modal-title(id="componentsModalLabel") upload dialog
+          div.modal-body
+              div.form-group
+                label.control-label(for="components_title") 组件英文名称:(暂时不支持中文，不能含有空格等特殊字符。)
+                input.form-control(type="text",id="components_title",name="components_title")
+              div.form-group
+                label.control-label(for="components_ctitle") 组件中文名称:
+                input.form-control(type="text",id="components_ctitle",name="components_ctitle")
+              div.form-group
+                label.control-label(for="components_description") 组件描述:
+                textarea.form-control(id="components_description",name="components_description")
+              div.form-group
+                label.control-label(for="components_code") 组件html代码:
+                textarea.form-control(id="components_code",name="components_code")
+              div.form-group
+                label.control-label(for="components_file") 组件js,css附件包:
+                input(type="file",id="components_file",name="components_file",multiple='mutiple')
+                p.help-block
+                  | 此包为该组件所需要引用的js和css.组件会因为包里根目录的js.js,和css.css,引入文件名固定。
+                  br
+                  | 注意：上传文件格式ZIP，包内根目录的js.js和css.css不能放在文件夹中.
+                  br
+                  | 注意：组件只引入js.js,css.css两个文件，暂时不支持引入多于这两个文件.
+                  br
+                  | 注意：可以不上传组件的附件包，样式只使用该网站的bootstrap3和自带样式.
+          div.modal-footer
+            button.btn.btn-default(type="button",data-dismiss="modal") Close
+            button.btn.btn-primary(type="submit") upload
+
+
+
+
+  div.modal.fade.bs-example-modal-lg(id="pluginsModal",tabindex="-1",role="dialog",aria-labelledby="pluginsModalLabel")
+    div.modal-dialog.modal-lg(role="document")
+      div.modal-content
+        form(role="form",action="/plugins/uploadPlugin",method="post",enctype='multipart/form-data',id='form_uploadPlugin')
+          div.modal-header
+            button.close(type="button",data-dismiss="modal",aria-label="Close")
+            h4.modal-title(id="pluginsModalLabel") upload dialog
+          div.modal-body
+              div.form-group
+                label.control-label(for="plugins_title") 插件英文名称:(暂时不支持中文，不能含有空格等特殊字符。)
+                input.form-control(type="text",id="plugins_title",name="plugins_title")
+              div.form-group
+                label.control-label(for="plugins_ctitle") 插件中文名称:
+                input.form-control(type="text",id="plugins_ctitle",name="plugins_ctitle")
+              div.form-group
+                label.control-label(for="plugins_description") 插件描述:
+                textarea.form-control(id="plugins_description",name="plugins_description")
+              div.form-group
+                label.control-label(for="plugins_code") 插件html代码:
+                textarea.form-control(id="plugins_code",name="plugins_code")
+              div.form-group
+                label.control-label(for="plugins_file") 插件js,css附件包:
+                input(type="file",id="plugins_file",name="plugins_file",multiple='mutiple')
+                p.help-block
+                  | 此包为该插件所需要引用的js和css.插件会因为包里根目录的js.js,和css.css,引入文件名固定。
+                  br
+                  | 注意：上传文件格式ZIP，包内根目录的js.js和css.css不能放在文件夹中.
+                  br
+                  | 注意：组件只引入js.js,css.css两个文件，暂时不支持引入多于这两个文件.
+                  br
+                  | 注意：可以不上传插件的附件包，样式只使用该网站的bootstrap3和自带样式.
+          div.modal-footer
+            button.btn.btn-default(type="button",data-dismiss="modal") Close
+            button.btn.btn-primary(type="submit") upload
+

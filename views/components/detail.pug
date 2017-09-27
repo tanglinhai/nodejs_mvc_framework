@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+    meta(http-equiv="X-UA-Compatible",content="IE=edge")
+    title= title
+    link(rel='stylesheet', href='/plugins/bootstrap/3.3.7/css/bootstrap.min.css')
+    if component.filenameTarget
+      link(rel='stylesheet', href='/uploads/'+component.userid+'/components/'+component.title+'/css.css')
+    <!--[if lt IE 9]>
+      script(src='/plugins/es5-shim.min.js')
+      script(src='/plugins/polyfill.js')
+      script(src='/plugins/html5shiv.min.js')
+      script(src='/plugins/respond.min.js')
+    <![endif]-->
+  body
+    | !{component.code}
+
+    script(src='/plugins/jquery-1.12.4.min.js')
+    script(src='/plugins/bootstrap/3.3.7/js/bootstrap.min.js')
+    if component.filenameTarget
+      script(src='/uploads/'+component.userid+'/components/'+component.title+'/js.js')
+
+

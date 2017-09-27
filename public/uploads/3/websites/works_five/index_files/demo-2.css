@@ -1,0 +1,193 @@
+.tz-landingpage{
+    position: relative;
+    display: block;
+    /*background: url("../../images/landing-page/backgorund.jpg") no-repeat center;*/
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 130px 0 80px;
+}
+
+.tz-landingpage-top{
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 0 0 50px;
+}
+.tz-landing-title{
+    margin: 0;
+    padding: 20px 0 130px;
+    font-family: 'Racing Sans One', cursive;
+    color: #d8ad6c;
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: normal;
+}
+
+.tz-landing-content{
+    display: inline-block;
+    max-width: 100%;
+    padding-top: 50px;
+}
+.tz-landing-content:hover h2 {
+    color: #d8ad6c;
+}
+.tz-landing-content:hover img{
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+}
+.tz-landing-content img{
+    transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+.tz-landing-content h2{
+    font-family: 'Racing Sans One', cursive;
+    color: #630947;
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: normal;
+    transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+}
+.tz-landing-content p{
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    color: #222222;
+}
+
+.tz-landingpage-bottom{
+    /*background: #f9f6f2;*/
+}
+.tz-landingpage-bottom .tz-post-footer:before{
+    display: none;
+}
+.tz-landingpage-bottom .tz-footer{
+    background: transparent !important;
+    padding: 0 !important;
+}
+.tz-landingpage-bottom .tz-footer .tz-footer-content{
+    padding: 100px 0 0;
+}
+.tz-landingpage-bottom .tz-footer .tz-footer-content .tz-footer-social a:hover{
+    color: #630947;
+}
+.tz-landingpage-bottom .tz-footer .tz-footer-content .tz-copyright{
+    font-size: 11px;
+    line-height: 24px;
+    color: #757575;
+}
+.tz-footer .tz-footer-content .tz-copyright a{
+    color: #757575;
+}
+.tz-footer .tz-footer-content .tz-copyright a:hover{
+    color: #630947;
+}
+.tz-landingpage-bottom .tz-post-footer,
+.tz-landingpage-bottom .tz-footer{
+    display: inline-block;
+}
+
+
+@media (max-width: 991px) {
+    .tz-landing-content img{
+        max-width: 100%;
+    }
+    .tz-landing-content h2,
+    .tz-landing-title{
+        font-size: 22px;
+    }
+    .tz-landing-content p{
+        font-size: 12px;
+    }
+    .tz-landingpage{
+        padding:100px 0 80px;
+    }
+    .tz-landing-title{
+        padding:20px 0 90px;
+    }
+    .tz-landing-content{
+        padding-top: 30px;
+    }
+    .tz-landingpage-bottom .tz-footer .tz-footer-content{
+        padding: 80px 0 0;
+    }
+}
+@media (max-width: 767px) {
+    .tz-landing-logo img{
+        max-width: 200px;
+        width: auto;
+        height: auto;
+    }
+    .tz-landingpage{
+        padding: 60px 0 40px;
+    }
+    .tz-landing-title{
+        padding: 20px 0 50px;
+    }
+    .tz-landingpage-top{
+        padding: 0 0 30px;
+    }
+    .tz-landing-content h2,
+    .tz-landing-title{
+        font-size: 18px;
+    }
+    .tz-landing-content h2{
+        margin: 5px 0 0;
+    }
+    .tz-landing-content p{
+        font-size: 11px;
+        line-height: 24px;
+        padding: 0;
+    }
+    .tz-landingpage-bottom .tz-footer .tz-footer-content .tz-copyright{
+        font-size: 9px;
+    }
+}
+@media (max-width: 520px) {
+    .tz-landing-content{
+        padding-top: 20px;
+    }
+    .tz-landing-content h2,
+    .tz-landing-title{
+        font-size: 14px;
+    }
+    .tz-landing-logo img,
+    .tz-landingpage-bottom .tz-footer .tz-footer-content .tz-footer-logo img{
+        max-width: 80px;
+        width: auto;
+        height: auto;
+    }
+    .tz-landing-title{
+        line-height: 14px;
+    }
+    .tz-landingpage-top{
+        padding: 0 0 25px;
+    }
+    .tz-landingpage-bottom .tz-footer .tz-footer-content{
+        padding: 25px 0 0;
+    }
+}

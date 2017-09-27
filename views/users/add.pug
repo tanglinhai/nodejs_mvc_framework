@@ -1,0 +1,74 @@
+extends ../layout
+
+block styles
+  link(rel='stylesheet', href='/pc/css/users/add.css')
+block scripts
+  script(src='/pc/js/users/add.min.js')
+
+block content
+  form#basicInfoForm(action='/users/addUser',method='post')
+      div.form
+          div.left.form-horizontal
+              div.form-group
+                  label.col-sm-3.control-label(for='username')
+                      font.form_required *
+                      | 用户名:
+                  div.col-sm-9
+                      input.form-control(type='text',placeholder='用户名',id='username',name='username',value='')
+              div.form-group
+                  label.col-sm-3.control-label(for='password')
+                      font.form_required *
+                      | 密码:
+                  div.col-sm-9
+                      input.form-control(type='password',placeholder='密码',id='password',name='password',value='')
+              div.form-group
+                  label.col-sm-3.control-label(for='name')
+                      font.form_required *
+                      | 英文名:
+                  div.col-sm-9
+                      input.form-control(type='text',placeholder='英文名',id='name',name='name',value='')
+              div.form-group
+                  label.col-sm-3.control-label(for='cname')
+                      font.form_required *
+                      | 中文名:
+                  div.col-sm-9
+                      input.form-control(type='text',placeholder='中文名',id='cname',name='cname',value='')
+              div.form-group(class='')
+                  label.col-sm-3.control-label(for='email')
+                      font.form_required *
+                      | 邮件:
+                  div.col-sm-9
+                      input.form-control(type='email',placeholder='邮件',id='email',name='email',value='')
+              div.form-group(class='')
+                  label.col-sm-3.control-label(for='phone')
+                      | 手机:
+                  div.col-sm-9
+                      input.form-control(type='text',placeholder='手机',id='phone',name='phone',value='')
+              div.form-group(class='')
+                  label.col-sm-3.control-label(for='description')
+                      | 个人描述:
+                  div.col-sm-9
+                      textarea.form-control(placeholder='个人描述',id='description',name='description',value='')
+
+
+
+
+          div.right
+              div.userHeadLogo#userHeadLogo
+                  img.img-thumbnail#userHeadImg(src='')
+                  br
+                  a.userlogotext= 上传图片
+              br
+              br
+              div.userInfoText= 资料完整度
+              br
+              div.progress
+                  div.progress-bar(role='progressbar', aria-valuenow='60', aria-valuein='0', aria-valuemax='100', style='width: 60%;') 60%
+              br
+              div.userInfoText= 基础信息
+                  = 已完善
+              br
+              div.userInfoText= 个性头像
+                  = 未完善
+          div.col-sm-offset-2.col-sm-10
+              button.btn.btn-default(type='submit') 保存个人信息

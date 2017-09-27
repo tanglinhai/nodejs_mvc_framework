@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0092)http://www.bjrbj.gov.cn/csibiz/indinfo/login.jsp;jsessionid=84E60D48B77C56646D0158C1F0B03EC7 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>北京市社会保险网上服务平台-城镇职工用户登录</title>
+
+  
+ 
+<link rel="stylesheet" type="text/css" href="./index_files/style_min.css">
+<script async="" src="./index_files/ta.js"></script><script type="text/javascript" src="./index_files/prototype_for_validation.js"></script>
+<script type="text/javascript" src="./index_files/effects.js"></script>
+<script type="text/javascript" src="./index_files/validation_cn.js"></script>
+
+
+<link href="./index_files/home2_styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="all">
+    <!--头部-->
+<div class="head"><!--头部-->
+			<div class="head_left"><img src="./index_files/logo.gif" alt="北京市社会保险网上服务平台"></div>
+			<div class="head_right">
+			</div>
+</div>
+<!-- 首都之窗量化代码 --> 
+<script type="text/javascript" src="./index_files/gs.js"></script>
+<!-- trs量化代码 --> 
+<noscript>&lt;img src="http://ta.trs.cn/c/1.gif?mpId=365&amp;jsoff=1" style="border:0" alt="" ignoreapd="1" /&gt;</noscript>
+<script>
+var _taq = _taq || [];
+_taq.home = 'http://ta.trs.cn/c';
+_taq.push(['_mpId', '365']);
+_taq.push(['_cli', '1']);
+(function(d, o, t) {
+if (window.inTRSDesignMode) return;
+var ma = d.createElement(o); ma.async = true; ma.commonresource="1"; ma.src = t;
+var s = d.getElementsByTagName(o)[0]; s.parentNode.insertBefore(ma, s);
+})(document, 'script', 'http://ta.trs.cn/c/js/ta.js');
+</script>
+<script language="JavaScript">
+<!--
+
+String.prototype.Trim = function() 
+{ 
+return this.replace(/(^\s*)|(\s*$)/g, ""); 
+} 
+
+String.prototype.LTrim = function() 
+{ 
+return this.replace(/(^\s*)/g, ""); 
+} 
+
+String.prototype.RTrim = function() 
+{ 
+return this.replace(/(\s*$)/g, ""); 
+} 
+
+//-->
+</script>
+
+<script type="text/javascript">
+function doKeyDownWithEnter(){
+    if(event.keyCode==13) 
+        { 
+         doSiteSearch('colsior');
+        }
+}
+function doSiteSearch(siteCatalogId)
+{
+    var webrootWithBackslash = '/csibiz/home';
+    var url = webrootWithBackslash + "/dynamic/site/siteArticleSearchAction$searchArticle.action";
+    
+    if(!siteCatalogId){
+        alert("js error：parameter(siteCatalogId) is undefined in this function 'doSiteSearch'");
+        return false;
+    }
+    
+    var siteKeyWords = document.getElementById('siteKeyWords').value;
+    
+    if(siteKeyWords == null || (siteKeyWords != null && siteKeyWords.Trim() == "")){
+        alert("请输入关键字！");
+        return false;
+    }
+    
+    if(siteCatalogId)
+        url = url + "?siteCatalogId=" + siteCatalogId;
+    if(siteKeyWords != null && siteKeyWords != "")
+        url = url + "&siteKeyWords=" + encodeURIComponent(encodeURI(siteKeyWords));
+    
+    window.open(url);
+    return false;
+    
+}
+</script>
+<script type="text/javascript">
+function safeCodeImg() {
+		var obj = document.getElementById("indsafecode"); 
+         safeCode(obj);
+	}
+	function safeCode(obj) {
+		var timenow = new Date().getTime();  
+         //每次请求需要一个不同的参数，否则可能会返回同样的验证码  
+         //这和浏览器的缓存机制有关系，也可以把页面设置为不缓存，这样就不用这个参数了。 
+         obj.src= "/csibiz/indinfo/validationCodeServlet.do?d="+timenow
+	}
+</script>
+	<div class="chengzhengr2"> 
+<div class="chengzhengr">
+	<div class="chengzhengrsize">
+    <div class="chengzhengrsize_left"><a href="http://www.bjrbj.gov.cn/csibiz/indinfo/login.jsp">城镇职工用户登录</a></div>
+    <div class="chengzhengrsize_right"><a href="http://www.bjrbj.gov.cn/csibiz/urbmi/login.jsp"> 城镇居民用户登录</a></div>
+    </div>
+    <form name="indform" id="indform" action="http://www.bjrbj.gov.cn/csibiz/indinfo/login_check" method="post" class="required-validate">
+<input type="hidden" name="type" id="type" value="1">
+<input type="hidden" name="flag" id="flag" value="3">   
+	<div class="ziyegryhdldiv1">身份证号码&nbsp;&nbsp;    
+	<input name="j_username" type="text" class="required validate-id-number" id="i_username" style="width:200px;" title="请输入合法的身份证号码">
+	<div id="advice-i_username" style="display:none" class="validation-advice"></div>
+	</div>
+    <div class="ziyegryhdldiv2">密码&nbsp;&nbsp;&nbsp;&nbsp;<input name="j_password" type="password" class="required min-length-8" id="i_password" style="width:200px;" title="请输入不少于8位的合法登录密码" maxlength="20">
+     <div id="advice-i_password" style="display:none" class="validation-advice"></div>
+    </div>
+   
+    <div class="ziyegryhdldiv3">附加码&nbsp;&nbsp;<input name="safecode" type="text" class="required" id="i_safecode" style="width:85px;" maxlength="4" title="请输入附加码" autocomplete="off">&nbsp;&nbsp;<img id="indsafecode" src="./index_files/validationCodeServlet.do" width="59" border="0" onclick="safeCode(this);" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:safeCodeImg();">换一张</a>
+    <div id="advice-i_safecode" style="display:none" class="validation-advice"></div></div>
+    <div class="ziyegryhdldiv4">
+   		<a href="http://www.bjrbj.gov.cn/csibiz/indinfo/gerenreg1.jsp"><img src="./index_files/grdlan.gif"></a>
+    	<input type="image" src="./index_files/grdlan2.gif">
+    </div>
+    <a class="ziyegryhdla" href="http://www.bjrbj.gov.cn/csibiz/indinfo/reset_password.jsp">找回密码</a>
+    </form>
+</div>
+</div>
+ <div class="grlj01">
+              <strong>请注意：              </strong><br>
+              1）若您尚未登录过请点击新用户注册，按新用户帮助其中的步骤完成登录密码的设置。<br>
+              2）若您无法正常登录，可以查看相关帮助，或者拨打96102。
+          </div>
+  <div class="grlj02">
+              <strong>请注意：              </strong><br>
+              城镇职工用户包括：1.在职职工是指与本市行政区域内的用人单位形成劳动关系的职工，其中用人单位是指中华人民共和国境内的企业、事业单位、社会团体、民办非企业单位、基金会、律师事务所、会计事务所等组织和有雇佣工的个体商户。
+			  2.无雇工的个体商户，未在用人单位参加社会保险的非全日制从业人员以及其他灵活就业人员。
+          </div><br>
+           
+</div> 
+ <div class="chengzhengrxia">
+            	<a href="http://www.bjrbj.gov.cn/csibiz/home/static/catalogs/catalog_108800/108800.html" target="_blank"><img src="./index_files/dw_01.jpg"></a><img src="./index_files/spsp.gif" width="55">
+            	<a href="http://www.bjrbj.gov.cn/csibiz/home/static/catalogs/catalog_106400/106400.html" target="_blank"><img src="./index_files/dw_02.jpg"></a><img src="./index_files/spsp.gif" width="55">
+                <a href="http://www.bjrbj.gov.cn/csibiz/home/static/catalogs/catalog_102000/102000.html" target="_blank"><img src="./index_files/dw_03.jpg"></a>
+            </div>   
+    <!--底部-->
+<div class="chengzhengrfooter">
+  <div class="ziyef_text">北京市人力资源和社会保障局 版权所有©&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京市社会保险基金管理中心&nbsp;&nbsp;主办<br>北京市西城区永内西街5号（100050）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备案号：京ICP备05056884号</div>	
+</div>		
+        
+
+
+
+ 
+
+</body></html>

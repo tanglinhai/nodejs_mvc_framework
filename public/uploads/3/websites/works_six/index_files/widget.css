@@ -1,0 +1,46 @@
+/*
+Admin style
+*/
+.tz-flickr-admin li{
+    padding-bottom: 15px;
+}
+.tz-flickr-admin label{
+    text-align: left;
+    font-weight: bold;
+    display:block;
+    padding-bottom: 5px;
+}
+.tz-flickr-admin span{
+    font-style: italic;
+    display:block;
+}
+.tz-flickr-admin input{
+    width:100%;
+    padding-bottom: 5px;
+}
+.tz-flickr-admin .number input{
+    width:50px;
+    padding-bottom: 5px;
+}
+.tz-flickr-admin .prettyphoto input{
+    float: left;
+    margin-top: 1px;
+    width: auto;
+}
+/*
+Frontend style
+*/
+.tz-flickr img{
+    float: left;
+    margin-right:10px;
+    margin-bottom:10px;
+}
+.pretty_flickr{
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+.pretty_flickr li{
+    padding:0;
+    margin:0;
+}

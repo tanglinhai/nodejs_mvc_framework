@@ -1,0 +1,57 @@
+extends ../layout
+
+block styles
+  link(rel='stylesheet', href='/pc/css/plugins/index.css')
+block scripts
+  script(src='/pc/js/plugins/index.min.js')
+
+
+
+block among_header_main
+  div.bs-docs-header
+      div.container
+        h1 JavaScript 插件
+        p jQuery 插件为 Bootstrap 的组件赋予了“生命”。可以简单地一次性引入所有插件，或者逐个引入到你的页面中。
+block content
+  div.container.bs-docs-container
+    div.row
+      div.col-md-9
+        div.bs-docs-section
+          h1.page-header#glyphicons 前端园地javascript插件列表
+          h2#glyphicons-glyphs 打造酷炫叼的js插件库
+          p 展示你的插件作品，分享你的作品，同时也可欣赏，下载别人的插件作品。
+
+          script(type='text/javascript').
+            function iframeLoad(iframe)
+            {
+                iframe.height=Math.max(iframe.contentWindow.document.body.scrollHeight,iframe.contentWindow.document.body.clientHeight);
+            }
+
+          each plugin, index in data
+            h2(id="glyphicons-examples-"+plugin.id)
+              a.anchorjs-link(href="#glyphicons-examples-"+plugin.id,aria-label="Anchor link for: glyphicons examples",data-anchorjs-icon="",style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;")
+              | #{plugin.ctitle}
+            p= plugin.description
+            div.bs-example(data-example-id="glyphicons-general")
+              iframe.bs-example-win(src="/plugins/detail/"+plugin.id,onload="iframeLoad(this)")
+            figure.highlight
+              textarea.plugin-code(readOnly=true)= plugin.code
+
+
+      div.col-md-3
+        nav.bs-docs-sidebar.hidden-print.hidden-xs.hidden-sm.affix
+          ul.nav.bs-docs-sidenav
+            li.active
+              a(href="#glyphicons") javascript插件列表
+              ul.nav
+                each plugin, index in data
+                  li
+                    a(href="#glyphicons-examples-"+plugin.id)= plugin.ctitle
+
+
+  nav.pagination
+    if page > 1
+      a.newer-posts(href="/plugins/"+(page-1)) &larr; 上一页
+    span.page-number 第 #{page} 页/共 #{Math.ceil(total / 10)} 页
+    if Math.ceil(total / 10) > page
+      a.older-posts(href="/plugins/"+(page+1)) 下一页 &rarr;

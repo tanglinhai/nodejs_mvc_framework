@@ -1,0 +1,85 @@
+/**
+ * 3.14 - Video / .tz-video
+ * -----------------------------------------------------------------------------
+ */
+
+.tz-video{
+    position: relative;
+    padding: 130px 0 50px;
+    overflow: hidden;
+    min-height: 470px;
+}
+.tz-video:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+}
+.tz-video-content{
+    text-align: center;
+    z-index: 999;
+    position: relative;
+}
+.tz-video-content img{
+    display: block;
+    margin: 0 auto 32px;
+}
+
+.videoID{
+    position: absolute;
+    width: auto;
+    height: auto;
+    max-height: 4000%;
+    min-height: 100%;
+    max-width: 1000%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+
+}
+.bg-video{
+    z-index: 6;
+}
+.bg-video:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+}
+.tzautoplay{
+    background: url('../images/autoplay.png') no-repeat center center transparent;
+    border: 0 none;
+    height: 60px;
+    width: 60px;
+}
+.tzpause{
+    background: url('../images/pause.png') no-repeat center center transparent;
+    border: 0 none;
+    height: 60px;
+    width: 60px;
+    display: none;
+    opacity: 0;
+
+}
+.tz-video:hover .tzpause{
+    opacity: 1;
+}
+.tz-video:hover .video-logo{
+    opacity: 1 !important;
+}
+.bg-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,29 @@
+extends ../layout
+
+block styles
+  link(rel='stylesheet', href='/pc/css/users/list.css')
+block scripts
+  script(src='/pc/js/users/list.min.js')
+
+block content
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th index
+        th username
+        th name
+        th cname
+        th description
+        th operation
+    tbody
+      each user, index in users
+        tr
+          th= index
+          td
+            a(href="/users/getUser/"+user.id)= user.username
+          td= user.name
+          td= user.cname
+          td= user.description
+          td
+            a(href='/users/delete/'+user.id) 删除
+

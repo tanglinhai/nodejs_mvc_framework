@@ -1,0 +1,60 @@
+@import '../../../css/mod/reset';
+@import '../../../css/mod/utils';
+@import '../../../css/mod/header';
+@import '../../../css/mod/footer';
+
+
+.langSetting{
+  .col-sm-12{
+    margin-bottom: 15px;
+  }
+  .form-group{
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.form:before,.form:after{
+  content:"";
+  display:table;
+}
+.form:after{clear:both;}
+.form{
+  position: relative;
+  .form_required{
+    color: red;
+  }
+  .left{
+    width: 50%;
+    float: left;
+    .form-group{
+      margin-bottom: 25px;
+    }
+  }
+  .right{
+    width: 50%;
+    float: left;
+    padding-left: 8%;
+    .userHeadLogo{
+      width: 140px;
+      .img-thumbnail{
+        width: 100%;
+        height: 140px;
+        cursor: pointer;
+      }
+      .userlogotext{
+        width: 100%;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+        display: block;
+      }
+    }
+
+    .userInfoText{
+      font-weight: bold;
+    }
+  }
+  .right:after{
+    clear: both;
+  }
+}

@@ -1,0 +1,108 @@
+@import '../../../../css/mod/reset';
+@import '../../../../css/mod/utils';
+@import '../../../../css/mod/header';
+@import '../../../../css/mod/footer';
+
+
+.main{
+  margin-top: 20px;
+
+  .toolbar{
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+
+
+  .my_pager{
+    margin: 0;
+    text-align: right;
+  }
+
+  .websiteTable{
+    thead {
+      th{
+        text-align: center;
+      }
+      .index{
+        width: 10%;
+        text-align: center;
+      }
+      .filename{
+        width: 15%;
+      }
+      .subject_name{
+        width: 15%;
+      }
+      .description{
+        width: 30%;
+      }
+      .date{
+        width: 15%;
+      }
+      .operation{
+        width: 15%;
+        text-align: center;
+      }
+    }
+
+    tbody{
+      th{
+        text-align: center;
+      }
+      tr{
+        td:last-child{
+          text-align: center;
+        }
+      }
+    }
+  }
+  .pluginTable,.componentTable{
+    thead{
+      th{
+        text-align: center;
+      }
+      .index{
+        width: 5%;
+      }
+      .title{
+        width: 10%;
+      }
+      .ctitle{
+        width: 10%;
+      }
+      .code{
+        width: 30%;
+      }
+      .des{
+        width: 20%;
+      }
+      .date{
+        width: 10%;
+      }
+      .operation{
+        width: 15%;
+      }
+    }
+    tbody{
+      th{
+        text-align: center;
+      }
+      tr{
+        td:last-child{
+          text-align: center;
+        }
+      }
+    }
+  }
+  .multi-line{
+    font-size: 14px;
+    line-height: 18px;
+    max-height: 72px;
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-all;
+  }
+
+
+}
