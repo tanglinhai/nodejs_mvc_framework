@@ -1,7 +1,7 @@
 # nodejs_mvc_framework
 ## 框架简介：<br/>
-1.架构组成：expressjs、orm、pug、mysql、 webpack、jquery、bootstrap3
-2.服务端采用nodejs写的。
+1.架构组成：expressjs、orm、pug、mysql、 webpack、jquery、bootstrap3<br/>
+2.服务端采用nodejs写的。<br>
 3.页面模板使用的是pug
 4.前端使用jquery
 5.js和css打包工具使用的是webpack
