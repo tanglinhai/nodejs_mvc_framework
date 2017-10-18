@@ -4,7 +4,7 @@ module.exports = {
     './pc/js/index.min.js': './pc/js/index.js',
     './pc/js/login.min.js': './pc/js/login.js',
     './pc/js/error.min.js': './pc/js/error.js',
-
+/*
     //users
     './pc/js/users/list.min.js': './pc/js/users/list.js',
     './pc/js/users/info.min.js': './pc/js/users/info.js',
@@ -22,7 +22,7 @@ module.exports = {
 
 
     //mobile
-    './mobile/js/index.min.js': './mobile/js/index.js',
+    './mobile/js/index.min.js': './mobile/js/index.js',*/
 
 //---------------------------------js end----------------------------------------
 
@@ -30,7 +30,7 @@ module.exports = {
 
 
 //---------------------------------css start----------------------------------------
-    './pc/css/index.css': './pc/css/index.scss',
+   /* './pc/css/index.css': './pc/css/index.scss',
     './pc/css/login.css': './pc/css/login.scss',
     './pc/css/error.css': './pc/css/error.scss',
 
@@ -48,6 +48,6 @@ module.exports = {
 
 
     //websites
-    './pc/css/websites/index.css': './pc/css/websites/index.scss',
+    './pc/css/websites/index.css': './pc/css/websites/index.scss',*/
 //---------------------------------css end----------------------------------------
 };
