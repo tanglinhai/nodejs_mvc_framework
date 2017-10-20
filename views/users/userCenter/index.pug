@@ -35,7 +35,7 @@ block content
                 div.multi-line= plugin.description
               td= plugin.date
               td
-                a.btn_del_work(href='/plugins/delPlugin/'+plugin.id) 删除
+                a.btn_del_work(href='/learn/plugins/delPlugin/'+plugin.id) 删除
 
       - var jspluginsTotalPage = Math.ceil(jsplugins.total / 10);
       if jspluginsTotalPage > 0
@@ -99,7 +99,7 @@ block content
                 div.multi-line= component.description
               td= component.date
               td
-                a.btn_del_work(href='/components/delComponent/'+component.id) 删除
+                a.btn_del_work(href='/learn/components/delComponent/'+component.id) 删除
 
       - var componentsTotalPage = Math.ceil(components.total / 10);
         if componentsTotalPage > 0
@@ -160,7 +160,7 @@ block content
                 div.multi-line= website.subject_description
               td= website.date
               td
-                a.btn_del_work(href='/websites/delWebsite/'+website.id) 删除
+                a.btn_del_work(href='/learn/websites/delWebsite/'+website.id) 删除
 
       - var websitesTotalPage = Math.ceil(websites.total / 10);
         if websitesTotalPage > 0
@@ -198,7 +198,7 @@ block content
   div.modal.fade(id="websitesModal",tabindex="-1",role="dialog",aria-labelledby="websitesModalLabel")
     div.modal-dialog(role="document")
       div.modal-content
-        form(role="form",action="/websites/uploadWebsite",method="post",enctype='multipart/form-data',id='form_uploadWebsite')
+        form(role="form",action="/learn/websites/uploadWebsite",method="post",enctype='multipart/form-data',id='form_uploadWebsite')
           div.modal-header
             button.close(type="button",data-dismiss="modal",aria-label="Close")
             h4.modal-title(id="websitesModalLabel") upload dialog
@@ -221,7 +221,7 @@ block content
   div.modal.fade.bs-example-modal-lg(id="componentsModal",tabindex="-1",role="dialog",aria-labelledby="componentsModalLabel")
     div.modal-dialog.modal-lg(role="document")
       div.modal-content
-        form(role="form",action="/components/uploadComponent",method="post",enctype='multipart/form-data',id='form_uploadComponent')
+        form(role="form",action="/learn/components/uploadComponent",method="post",enctype='multipart/form-data',id='form_uploadComponent')
           div.modal-header
             button.close(type="button",data-dismiss="modal",aria-label="Close")
             h4.modal-title(id="componentsModalLabel") upload dialog
@@ -259,7 +259,7 @@ block content
   div.modal.fade.bs-example-modal-lg(id="pluginsModal",tabindex="-1",role="dialog",aria-labelledby="pluginsModalLabel")
     div.modal-dialog.modal-lg(role="document")
       div.modal-content
-        form(role="form",action="/plugins/uploadPlugin",method="post",enctype='multipart/form-data',id='form_uploadPlugin')
+        form(role="form",action="/learn/plugins/uploadPlugin",method="post",enctype='multipart/form-data',id='form_uploadPlugin')
           div.modal-header
             button.close(type="button",data-dismiss="modal",aria-label="Close")
             h4.modal-title(id="pluginsModalLabel") upload dialog

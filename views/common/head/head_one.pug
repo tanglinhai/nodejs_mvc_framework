@@ -1,0 +1,30 @@
+header.main-header(style='background-image: url(/pc/img/index/index_head_bg.jpg)')
+  div.container
+    div.row
+      div.col-sm-12
+        a.branding(href="/",title="Ghost 开源博客平台")
+          img(src="/pc/img/index/diamond.jpg",alt="Ghost 开源博客平台")
+        h2.text-hide Ghost 是一个简洁、强大的写作平台。你只须专注于用文字表达你的想法就好，其余的事情就让 Ghost 来帮你处理吧。
+        img.hide(src="/pc/img/index/index_head_bg.jpg",alt="Ghost 博客系统")
+nav.main-navigation
+    div.container
+      div.row
+        div.col-sm-12
+          div.navbar-header
+            span.nav-toggle-button.collapsed(data-toggle="collapse",data-target="#main-menu")
+              span.sr-only Toggle navigation
+              i.fa.fa-bars
+          div.collapse.navbar-collapse
+            ul.menu
+              li.nav-current(role="presentation")
+                a(href="/") 首页
+              li(role="presentation")
+                a(href="/learn") 天眼园地
+              li(role="presentation")
+                a(href="/task") 天眼任务
+              li(role="presentation")
+                a(href="/") 中文文档
+              li(role="presentation")
+                a(href="/") 下载
+              li(role="presentation")
+                a(href="/") 关于

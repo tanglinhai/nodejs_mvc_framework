@@ -16,13 +16,15 @@ html
     script(type='text/javascript').
       console.log('start');
   body
-    include common/header.pug
+    block head
+      include common/head/head_two.pug
     block among_header_main
     main.main
       div.container
         block content
     block among_main_footer
-    include common/footer.pug
+    block foot
+      include common/foot/foot_two.pug
     script(src='/plugins/jquery-1.12.4.min.js')
     script(src='/plugins/bootstrap/3.3.7/js/bootstrap.min.js')
     block scripts

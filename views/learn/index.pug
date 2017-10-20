@@ -1,0 +1,64 @@
+extends ../layout
+
+block styles
+  link(rel='stylesheet', href='/pc/css/learn/index.css')
+block scripts
+  script(src='/pc/js/learn/index.min.js')
+
+block among_header_main
+  div.bs-docs-masthead
+    div.container
+      span.bs-docs-booticon.bs-docs-booticon-lg.bs-docs-booticon-outline 天眼园地
+      p.lead 天眼技术平台，提供给技术人员进行技术交流学习使用。促进共同进步，并且将技术应用于公司项目，以达到提供生产效率。
+      p.lead
+        a.btn.btn-outline-inverse.btn-lg(href="#") 去下载WEBSITE实例
+      p.version 当前版本： v0.0.0 | 文档更新于：2017-05-22
+
+
+block content
+
+block among_main_footer
+  div.bs-docs-featurette
+    div.container
+      h2.bs-docs-featurette-title 为所有开发者、所有应用场景而设计。
+      p.lead 天眼园地 让前端开发更快速、简单。所有开发者都能快速上手、所有设备都可以适配、所有项目都适用。
+      hr.half-rule
+      div.row
+        div.col-sm-4
+          img.img-responsive(src="assets/img/sass-less.png",alt="Sass and Less support")
+          h3 预处理脚本
+          p 虽然可以直接使用 天眼技术园地 提供的 CSS 样式表，不要忘记 天眼技术园地 的源码是基于最流行的 CSS 预处理脚本 - Less 和 Sass 开发的。你可以采用预编译的 CSS 文件快速开发，也可以从源码定制自己需要的样式。
+        div.col-sm-4
+          img.img-responsive(src="assets/img/devices.png",alt="Responsive across devices")
+          h3 一个框架、多种设备
+          p 你的网站和应用能在 天眼技术园地 的帮助下通过同一份代码快速、有效适配手机、平板、PC 设备，这一切都是 CSS 媒体查询（Media Query）的功劳。
+        div.col-sm-4
+          img.img-responsive(src="assets/img/components.png",alt="Components")
+          h3 特性齐全
+          p 天眼技术园地 提供了全面、美观的文档。你能在这里找到关于 HTML 元素、HTML 和 CSS 组件、jQuery 插件方面的所有详细文档。
+      hr.half-rule
+      p.lead  天眼技术园地 是完全开源的。它的代码托管、开发、维护都依赖 GitHub 平台。
+      a.btn.btn-outline.btn-lg(href="https://github.com/") 查看 GitHub 项目主页
+
+  div.bs-docs-featurette
+    div.container
+      h2.bs-docs-featurette-title 基于 天眼技术园地 构建的网站
+      p.lead 全球数以百万计的网站都是基于 天眼技术园地 构建的。你可以先参观一下我们提供的实例精选或者看一看我们粉丝的网站吧。
+      hr.half-rule
+      div.row.bs-docs-featured-sites
+        div.col-xs-6.col-sm-3
+          a(href="http://www.golaravel.com/",target="_blank",title="Laravel中文网")
+            img.img-responsive(src="https://static.bootcss.com/expo/img/3/61/34091ac7072297a889fe986b0238e.png",alt="Laravel中文网")
+        div.col-xs-6.col-sm-3
+          a(href="http://www.ghostchina.com/",target="_blank",title="Ghost中国")
+            img.img-responsive(src="https://static.bootcss.com/expo/img/7/b5/f9c2f01fad1f23574156e0577a06c.jpg",alt="Ghost中国")
+        div.col-xs-6.col-sm-3
+          a(href="http://www.gulpjs.com/",target="_blank",title="Gulp中文网")
+            img.img-responsive(src="https://static.bootcss.com/expo/img/9/77/9aa20712a7dba02b00e73db495950.png",alt="Gulp中文网")
+        div.col-xs-6.col-sm-3
+          a(href="http://www.gruntjs.com/",target="_blank",title="Gurnt中文网")
+            img.img-responsive(src="https://static.bootcss.com/expo/img/6/56/aecc20901cc436b5cd10911302e0b.png",alt="Gurnt中文网")
+      hr.half-rule
+      p.lead 我们在“优站精选”里展示了许多精美的 天眼技术园地 网站。
+      a.btn.btn-outline.btn-lg(href="#") 逛一逛“优站精选”
+

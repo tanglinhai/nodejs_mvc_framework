@@ -4,61 +4,137 @@ block styles
   link(rel='stylesheet', href='/pc/css/index.css')
 block scripts
   script(src='/pc/js/index.min.js')
-
-block among_header_main
-  div.bs-docs-masthead
-    div.container
-      span.bs-docs-booticon.bs-docs-booticon-lg.bs-docs-booticon-outline 天眼园地
-      p.lead 天眼技术平台，提供给技术人员进行技术交流学习使用。促进共同进步，并且将技术应用于公司项目，以达到提供生产效率。
-      p.lead
-        a.btn.btn-outline-inverse.btn-lg(href="#") 去下载WEBSITE实例
-      p.version 当前版本： v0.0.0 | 文档更新于：2017-05-22
-
+block head
+  include common/head/head_one.pug
 
 block content
+  section.content-wrap
+      .container
+        .row
+          main.col-md-8.main-content
+            article#108.post
+              .post-head
+                h1.post-title
+                  a(href='/custom-excerpts/') &#x81EA;&#x5B9A;&#x4E49;&#x6587;&#x7AE0;&#x6458;&#x8981;&#xFF08;Excerpt&#xFF09;
+                |
+                .post-meta
+                  span.author
+                    | &#x4F5C;&#x8005;&#xFF1A;
+                    a(href='/author/wangsai/') &#x738B;&#x8D5B;
+                  |  &bull;
+                  |
+                  time.post-date(datetime='2017年8月9日星期三下午4点57分', title='2017年8月9日星期三下午4点57分') 2017&#x5E74;8&#x6708;9&#x65E5;
+              |
+              .post-content
+                p
+                  | &#x968F;&#x7740; P2peye 1.0 &#x548C; Hemingway Mode &#x7684;&#x53D1;&#x5E03;&#xFF0C;&#x4ECA;&#x5929;&#x6211;&#x4EEC;&#x53C8;&#x53D1;&#x5E03;&#x4E86;&ldquo;&#x81EA;&#x5B9A;&#x4E49;&#x6587;&#x7AE0;&#x6458;&#x8981;&rdquo;&#x529F;&#x80FD;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;P2peye &#x4F1A;&#x622A;&#x53D6;&#x6587;&#x7AE0;&#x6B63;&#x6587;&#x5F00;&#x5934;&#x90E8;&#x5206;&#x7684;&#x6587;&#x5B57;&#xFF08;&#x4E00;&#x822C;&#x662F;55&#x4E2A;&#x5B57;&#xFF09;&#x4F5C;&#x4E3A;&#x6587;&#x7AE0;&#x6458;&#x8981;&#x5E76;&#x663E;&#x793A;&#x5728;&#x6587;&#x7AE0;&#x5F52;&#x6863;&#x5217;&#x8868;&#x4E2D;&#x3002;&#x6458;&#x8981;&#x6709;&#x52A9;&#x4E8E;&#x8BFB;&#x8005;&#x5FEB;&#x901F;&#x4E86;&#x89E3;&#x6587;&#x7AE0;&#x6240;&#x8981;&#x8868;&#x8FBE;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5E0C;&#x671B;&#x81EA;&#x5DF1;&#x5B9A;
+              |
+              .post-permalink
+                a.btn.btn-default(href='/custom-excerpts/') &#x9605;&#x8BFB;&#x5168;&#x6587;
+              |
+              footer.post-footer.clearfix
+                .pull-left.tag-list
+                  i.fa.fa-folder-open-o
+                |
+                .pull-right.share
+            |
+            article#107.post.tag-zhuti.tag-zhu-shou-han-shu
+              .post-head
+                h1.post-title
+                  a(href='/primary-tags/') &#x9996;&#x8981;&ldquo;&#x6807;&#x7B7E;&rdquo;
+                |
+                .post-meta
+                  span.author
+                    | &#x4F5C;&#x8005;&#xFF1A;
+                    a(href='/author/wangsai/') &#x738B;&#x8D5B;
+                  |  &bull;
+                  |
+                  time.post-date(datetime='2017年8月3日星期四上午10点09分', title='2017年8月3日星期四上午10点09分') 2017&#x5E74;8&#x6708;3&#x65E5;
+              |
+              .post-content
+                p
+                  | &#x5728; P2peye &#x4E2D;&#xFF0C;&#x6BCF;&#x4E00;&#x7BC7;&#x535A;&#x6587;&#x90FD;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x6807;&#x7B7E;&#xFF08;tag&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x4E9B;&#x6807;&#x7B7E;&#x7684;&#x6392;&#x5217;&#x987A;&#x5E8F;&#x4E5F;&#x88AB; P2peye &#x5B8C;&#x6574;&#x4FDD;&#x5B58;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x6700;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x88AB;&#x7279;&#x6B8A;&#x5BF9;&#x5F85;&#x3002; &#x73B0;&#x5728;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x540E;&#x53F0;&#x901A;&#x8FC7;&#x62D6;&#x62FD;&#x6807;&#x7B7E;&#x7684;&#x4F4D;&#x7F6E;&#x6765;&#x8BBE;&#x7F6E;&ldquo;&#x9996;&#x8981;&#x6807;&#x7B7E;&rdquo;&#xFF0C;&#x5E76;&#x4E14;&#x80FD;&#x591F;&#x901A;&#x8FC7; {{tags.[0]}} &#x83B7;&#x53D6;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x3002;&#x7531;&#x4E8E;&#x8FD9;&#x79CD;&#x8BED;&#x6CD5;
+              |
+              .post-permalink
+                a.btn.btn-default(href='/primary-tags/') &#x9605;&#x8BFB;&#x5168;&#x6587;
+              |
+              footer.post-footer.clearfix
+                .pull-left.tag-list
+                  i.fa.fa-folder-open-o
+                  |
+                  a(href='/tag/zhuti/') &#x4E3B;&#x9898;
+                  | ,
+                  a(href='/tag/zhu-shou-han-shu/') &#x52A9;&#x624B;&#x51FD;&#x6570;
+                |
+                .pull-right.share
+            |
 
-block among_main_footer
-  div.bs-docs-featurette
-    div.container
-      h2.bs-docs-featurette-title 为所有开发者、所有应用场景而设计。
-      p.lead 天眼园地 让前端开发更快速、简单。所有开发者都能快速上手、所有设备都可以适配、所有项目都适用。
-      hr.half-rule
-      div.row
-        div.col-sm-4
-          img.img-responsive(src="assets/img/sass-less.png",alt="Sass and Less support")
-          h3 预处理脚本
-          p 虽然可以直接使用 天眼技术园地 提供的 CSS 样式表，不要忘记 天眼技术园地 的源码是基于最流行的 CSS 预处理脚本 - Less 和 Sass 开发的。你可以采用预编译的 CSS 文件快速开发，也可以从源码定制自己需要的样式。
-        div.col-sm-4
-          img.img-responsive(src="assets/img/devices.png",alt="Responsive across devices")
-          h3 一个框架、多种设备
-          p 你的网站和应用能在 天眼技术园地 的帮助下通过同一份代码快速、有效适配手机、平板、PC 设备，这一切都是 CSS 媒体查询（Media Query）的功劳。
-        div.col-sm-4
-          img.img-responsive(src="assets/img/components.png",alt="Components")
-          h3 特性齐全
-          p 天眼技术园地 提供了全面、美观的文档。你能在这里找到关于 HTML 元素、HTML 和 CSS 组件、jQuery 插件方面的所有详细文档。
-      hr.half-rule
-      p.lead  天眼技术园地 是完全开源的。它的代码托管、开发、维护都依赖 GitHub 平台。
-      a.btn.btn-outline.btn-lg(href="https://github.com/") 查看 GitHub 项目主页
+            nav.pagination(role='navigation')
+              span.page-number &#x7B2C; 1 &#x9875; &frasl; &#x5171; 9 &#x9875;
+              |
+              a.older-posts(href='/page/2/')
+                i.fa.fa-angle-right
+          |
+          aside.col-md-4.sidebar
+            // start widget
+            // end widget
+            // start tag cloud widget
+            .widget
+              h4.title 社区
+              |
+              .content.community
+                p QQ群：142343298472
+                |
+                p
+                  a(href='http://www.p2peye.com/ask/', title='网贷问答社区', target='_blank')
+                    i.fa.fa-comments
+                    |  网贷问答社区
+                |
+                p
+                  a(href='http://news.p2peye.com/', title='网贷资讯', target='_blank')
+                    i.fa.fa-weibo
+                    |  网贷资讯
+            // end tag cloud widget
+            // start tag cloud widget
+            .widget
+              h4.title 标签云
+              |
+              .content.tag-cloud
+                a(href='/tag/jquery/') jQuery
+                |
+                a(href='/tag/opensource/') 开源
+                |
+                a(href='/tag/zhu-shou-han-shu/') 助手函数
+                |
+                a(href='/tag/tag-cloud/') 标签云
+                |
+                a(href='/tag/navigation/') 导航
+                |
+                a(href='/tag/customize-page/') 自定义页面
+                |
+                a(href='/tag/static-page/') 静态页面
+                |
+                a(href='/tag/roon-io/') Roon.io
+                |
+                a(href='/tag/configuration/') 配置文件
+                |
+                a(href='/tag/upyun/') 又拍云存储
+                |
+                a(href='/tag/upload/') 上传
+                |
+                a(href='/tag/handlebars/') Handlebars
+                |
+                a(href='/tag/email/') 邮件
+                |
+                a(href='/tag/shortcut/') 快捷键
+                |
+                a(href='/tag/yong-hu-zhi-nan/') 用户指南
+                |
+                a(href='/tag/theme-market/') 主题市场
+                |
+                a(href='/tag/release/') 新版本发布
+                |
+                a(href='/tag-cloud/') ...
 
-  div.bs-docs-featurette
-    div.container
-      h2.bs-docs-featurette-title 基于 天眼技术园地 构建的网站
-      p.lead 全球数以百万计的网站都是基于 天眼技术园地 构建的。你可以先参观一下我们提供的实例精选或者看一看我们粉丝的网站吧。
-      hr.half-rule
-      div.row.bs-docs-featured-sites
-        div.col-xs-6.col-sm-3
-          a(href="http://www.golaravel.com/",target="_blank",title="Laravel中文网")
-            img.img-responsive(src="https://static.bootcss.com/expo/img/3/61/34091ac7072297a889fe986b0238e.png",alt="Laravel中文网")
-        div.col-xs-6.col-sm-3
-          a(href="http://www.ghostchina.com/",target="_blank",title="Ghost中国")
-            img.img-responsive(src="https://static.bootcss.com/expo/img/7/b5/f9c2f01fad1f23574156e0577a06c.jpg",alt="Ghost中国")
-        div.col-xs-6.col-sm-3
-          a(href="http://www.gulpjs.com/",target="_blank",title="Gulp中文网")
-            img.img-responsive(src="https://static.bootcss.com/expo/img/9/77/9aa20712a7dba02b00e73db495950.png",alt="Gulp中文网")
-        div.col-xs-6.col-sm-3
-          a(href="http://www.gruntjs.com/",target="_blank",title="Gurnt中文网")
-            img.img-responsive(src="https://static.bootcss.com/expo/img/6/56/aecc20901cc436b5cd10911302e0b.png",alt="Gurnt中文网")
-      hr.half-rule
-      p.lead 我们在“优站精选”里展示了许多精美的 天眼技术园地 网站。
-      a.btn.btn-outline.btn-lg(href="#") 逛一逛“优站精选”
-
+block foot
+  include common/foot/foot_one.pug
