@@ -70,14 +70,14 @@ module.exports = {
             name: 'vendor',
             filename: 'vendor-[hash].min.js',
         }),*/
-        /*new webpack.optimize.UglifyJsPlugin({
+        new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
                 drop_console: false,
             },
             sourceMap: true,
             mangle: true
-        }),*/
+        }),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
