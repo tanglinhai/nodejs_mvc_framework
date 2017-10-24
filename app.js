@@ -15,6 +15,7 @@ const components = require('./routes/learn/components');
 const websites = require('./routes/learn/websites');
 const plugins = require('./routes/learn/plugins');
 const login = require('./routes/users/login');
+const register = require('./routes/users/register');
 const users = require('./routes/users/users');
 
 const app = express();
@@ -50,6 +51,7 @@ app.use((req, res, next)=>{
 });
 app.use('/', index);
 app.use('/login', login);
+app.use('/register', register);
 app.use('/users', users);
 app.use('/learn', learn_index);
 app.use('/learn/components', components);

@@ -43,8 +43,8 @@ html
               div.form-bottom
                 form.login-form(role="form",action="/login/in",method="post")
                   div.form-group
-                    label.sr-only(for="form-username") Username
-                    input.form-username.form-control(type="text",name="username",placeholder="Username...",id="form-username")
+                    label.sr-only(for="form-username") Account Name
+                    input.form-username.form-control(type="text",name="username",placeholder="Account Name...",id="form-username")
                   div.form-group
                     label.sr-only(for="form-password") Password
                     input.form-password.form-control(type="password",name="password",placeholder="Password...",id="form-password")
@@ -52,7 +52,9 @@ html
 
           div.row
             div.col-sm-6.col-sm-offset-3.social-login
-              h3 ...or login with:
+              h3
+                | ...no account?
+                a(href="/register/page") To register an account.
               div.social-login-buttons
                 a.btn.btn-link-1.btn-link-1-facebook(href="#")
                   i.fa.fa-facebook Facebook

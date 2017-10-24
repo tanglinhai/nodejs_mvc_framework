@@ -16,13 +16,12 @@ header.navbar.navbar-static-top.bs-docs-nav
       ul.nav.navbar-nav.navbar-right
         li
           a(href="http://www.p2peye.com/") 网贷天眼
-        li
-          if locals.user
+        if locals.user
+          li
             div.user_info
               div.user_logo
               div.user_name= locals.user.cname
               div.user_arrow
-
               ul.dropdown-menu.user_dropmenu
                 if locals.user.id == 1
                   li
@@ -33,8 +32,11 @@ header.navbar.navbar-static-top.bs-docs-nav
                   a(href="/users/help") 帮助中心
                 li
                   a(href="/login/out") 退出
-          else
+        else
+          li
             a(href="/login/page") 登录
+          li
+            a(href="/register/page") 注册
 
 
 

@@ -11,7 +11,7 @@ module.exports = {
         filename: '[name]'
     },
 
-    //devtool: "eval-source-map",
+    //devtool: "cheap-module-eval-source-map",
     devtool: "source-map",
     module: {
 
@@ -30,15 +30,22 @@ module.exports = {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     use: [{
-                        loader: "css-loader"
+                        loader: "css-loader",
+                        options:{
+                            minimize: true, //css压缩
+                            sourceMap: true
+                        }
                     }, {
-                        loader: "sass-loader"
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true
+                        }
                     }],
                     // use style-loader in development
                     fallback: "style-loader"
                 })
             },
-            { test: /\.css$/, loader: 'style-loader!css-loader' },
+            { test: /\.css$/, loader: 'style-loader?sourceMap!css-loader?sourceMap' },
             { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
             { test: /\.(woff|woff2)$/, loader:"url?prefix=font/&limit=5000" },
             { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
@@ -63,13 +70,23 @@ module.exports = {
             name: 'vendor',
             filename: 'vendor-[hash].min.js',
         }),*/
-        new webpack.optimize.UglifyJsPlugin({
+        /*new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
                 drop_console: false,
             },
-            sourceMap: true
+            sourceMap: true,
+            mangle: true
+        }),*/
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
         }),
+        /*new webpack.SourceMapDevToolPlugin({
+            filename: '[file].map',
+            columns: false
+        }),*/
         new ExtractTextPlugin({
             filename: "[name]",
             disable: process.env.NODE_ENV === "development"

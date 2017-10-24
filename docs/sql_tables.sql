@@ -1,13 +1,17 @@
-CREATE TABLE IF NOT EXISTS `p2peye_fe`.`user` (
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(100) NOT NULL,
-  `password` VARCHAR(100) NOT NULL,
-  `name` VARCHAR(100) NULL,
-  `cname` VARCHAR(100) NULL,
-  `description` VARCHAR(2000) NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `cname` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `description` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `username_UNIQUE` (`username` ASC),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC));
+  UNIQUE KEY `username_UNIQUE` (`username`) USING BTREE,
+  UNIQUE KEY `id_UNIQUE` (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `website_uploads`;

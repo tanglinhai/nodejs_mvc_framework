@@ -12,7 +12,7 @@ const pageSize = 10;
 module.exports={
     get:(req,res)=>{
         return new Promise((resolve, reject)=>{
-            req.db.load('../../models/user',(err)=>{
+            req.db.load('../../models/p2peye_fe/user',(err)=>{
                 const userModel=req.db.models.user;
                 userModel.get(req.params.id, (err,item)=>{
                     resolve({err,item});
@@ -22,7 +22,7 @@ module.exports={
     },
     getAll: (req,res)=>{
         return new Promise((resolve, reject)=>{
-            req.db.load('../../models/user',(err)=>{
+            req.db.load('../../models/p2peye_fe/user',(err)=>{
                 const userModel=req.db.models.user;
                 userModel.find({}, (err, items)=>{
                     resolve({err, items});
@@ -32,7 +32,7 @@ module.exports={
     },
     del: (req,res)=>{
         return new Promise((resolve, reject)=>{
-            req.db.load('../../models/user',(err)=>{
+            req.db.load('../../models/p2peye_fe/user',(err)=>{
                 const userModel=req.db.models.user;
                 userModel.get(req.params.id, (err, user)=>{
                     user.remove((err)=>{
@@ -44,7 +44,7 @@ module.exports={
     },
     addUser: (req,res)=>{
         return new Promise((resolve, reject)=>{
-            req.db.load('../../models/user', (err)=>{
+            req.db.load('../../models/p2peye_fe/user', (err)=>{
                 const userModel = req.db.models.user;
                 userModel.get(1, (err, user)=>{
                     resolve({err, user});
@@ -58,7 +58,7 @@ module.exports={
     getUserInfo: (req,res)=>{
         return new Promise((resolve, reject)=>{
             const page = 1;
-            req.db.load('../../models/website_uploads', (err)=>{
+            req.db.load('../../models/p2peye_fe/website_uploads', (err)=>{
                 if(err) throw err;
                 const website_uploadsModel = req.db.models.website_uploads;
                 website_uploadsModel.count({userid: req.session.user.id}, (cwebsiteerr, websiteCounts)=>{
@@ -70,7 +70,7 @@ module.exports={
 
 
 
-                        req.db.load('../../models/components', (err)=>{
+                        req.db.load('../../models/p2peye_fe/components', (err)=>{
                             if(err) throw err;
                             const componentsModel = req.db.models.components;
                             componentsModel.count({userid: req.session.user.id}, (ccomponentserr, componentsCounts)=>{
@@ -83,7 +83,7 @@ module.exports={
 
 
 
-                                    req.db.load('../../models/plugins', (err)=>{
+                                    req.db.load('../../models/p2peye_fe/plugins', (err)=>{
                                         if(err) throw err;
                                         const pluginsModel = req.db.models.plugins;
                                         pluginsModel.count({userid: req.session.user.id}, (cpluginserr, pluginsCounts)=>{

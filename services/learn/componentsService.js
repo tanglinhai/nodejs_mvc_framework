@@ -11,7 +11,7 @@ const pageSize = 10;
 module.exports={
     get: (req,res)=>{
         return new Promise((resolve, reject)=>{
-            req.db.load('../../models/components', (err)=>{
+            req.db.load('../../models/p2peye_fe/components', (err)=>{
                 const componentsModel = req.db.models.components;
                 componentsModel.find({id: req.params.id}, (err, component)=>{
                     if(err){
@@ -35,7 +35,7 @@ module.exports={
 
     getComponents: (req,res)=>{
         return new Promise((resolve, reject)=>{
-            req.db.load('../../models/components', (err)=>{
+            req.db.load('../../models/p2peye_fe/components', (err)=>{
                 const componentsModel = req.db.models.components;
                 const page = req.body.page || 1;
                 componentsModel.count((e, total)=>{
@@ -63,7 +63,7 @@ module.exports={
     },
     getAll: (req,res)=>{
         return new Promise((resolve, reject)=>{
-            req.db.load('../../models/components', (err)=>{
+            req.db.load('../../models/p2peye_fe/components', (err)=>{
                 const componentsModel = req.db.models.components;
                 const page = req.params.page || 1;
                 componentsModel.count((e, total)=>{
@@ -205,7 +205,7 @@ module.exports={
     },
     delUpload: (req,res)=>{
         return new Promise((resolve, reject)=>{
-            req.db.load('../../models/components', (err1)=>{
+            req.db.load('../../models/p2peye_fe/components', (err1)=>{
                 const componentsModel = req.db.models.components;
                 componentsModel.find({userid: req.session.user.id, id: req.params.id}, (err2, components)=>{
                     if(err2){

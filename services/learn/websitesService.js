@@ -12,7 +12,7 @@ const pageSize = 10;
 module.exports={
     getWebsites: (req,res)=>{
         return new Promise((resolve, reject) => {
-            req.db.load('../../models/website_uploads', (err)=>{
+            req.db.load('../../models/p2peye_fe/website_uploads', (err)=>{
                 const website_uploadsModel = req.db.models.website_uploads;
                 const page = req.body.page || 1;
                 website_uploadsModel.count((e, total)=>{
@@ -40,7 +40,7 @@ module.exports={
     },
     getAllWorks: (req,res)=>{
         return new Promise((resolve, reject) => {
-            req.db.load('../../models/website_uploads', (err)=>{
+            req.db.load('../../models/p2peye_fe/website_uploads', (err)=>{
                 const website_uploadsModel = req.db.models.website_uploads;
                 const page = req.params.page || 1;
                 website_uploadsModel.count((e, total)=>{
@@ -197,7 +197,7 @@ module.exports={
     },
     delUploadWorks: (req,res)=>{
         return new Promise((resolve, reject) => {
-            req.db.load('../../models/website_uploads', (err1)=>{
+            req.db.load('../../models/p2peye_fe/website_uploads', (err1)=>{
                 const website_uploadsModel = req.db.models.website_uploads;
                 website_uploadsModel.find({userid: req.session.user.id, id: req.params.id}, (err2, website_uploads)=>{
                     if(err2){

@@ -1,0 +1,94 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+    meta(http-equiv="X-UA-Compatible",content="IE=edge")
+    title= title
+    link(rel='stylesheet', href='/plugins/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/pc/css/users/register.css')
+    <!--[if lt IE 9]>
+      script(src='/plugins/es5-shim.min.js')
+      script(src='/plugins/polyfill.js')
+      script(src='/plugins/html5shiv.min.js')
+      script(src='/plugins/respond.min.js')
+    <![endif]-->
+  body
+    if locals.registerResult
+      div.alert.alert-danger.register-message(role="alert")
+        strong sorry!
+        = locals.loginResult.message
+    div.top-content
+      div.container
+        div.inner-bg
+          div.row
+            div.col-sm-8.col-sm-offset-2.text
+              h1
+                strong P2peyeFe
+                |  Register Form
+              div.description
+                p
+                | 快速注册天眼前端账号。
+                br
+                | 管理你的作品，上传你的作品，分享给大家，同时你也可以分享别人作品。
+
+          div.row
+            div.col-sm-12.form-box
+              div.form-top
+                div.form-top-left
+                  h3 Fill the form below
+                  p Enter your information to get a account:
+                div.form-top-right
+                  i.fa.fa-key
+              div.form-bottom
+                form.register-form(role="form",action="/register/submit",method="post")
+                  div.row
+                    div.col-sm-6
+                      div.form-group
+                        label(for="form-username") Account Name
+                        input.required.form-username.form-control(type="text",name="username",placeholder="Account Name...",id="form-username")
+                      div.form-group
+                        label(for="form-password") Password
+                        input.required.form-password.form-control(type="password",name="password",placeholder="Password...",id="form-password")
+                      div.form-group
+                        label(for="form-password-confirm") Password Confirm
+                        input.required.form-password.form-control(type="password",placeholder="Password Confirm...",id="form-password-confirm")
+                      div.form-group
+                        label(for="form-email") Email
+                        input.required.form-email.form-control(type="text",name="email",placeholder="Email...",id="form-email")
+                      div.form-group
+                        label(for="form-phone") Phone
+                        input.required.form-phone.form-control(type="text",name="phone",placeholder="Phone...",id="form-phone")
+                      div.form-group
+                        label(for="form-introduction") Introduction
+                        textarea.form-introduction.form-control(name="description",placeholder="Introduction...",id="form-introduction")
+                    div.col-sm-6
+                      div.form-group
+                        label(for="form-name") en name
+                        input.form-name.form-control(type="text",name="name",placeholder="en name...",id="form-name")
+                      div.form-group
+                        label(for="form-cname") zh name
+                        input.form-cname.form-control(type="text",name="cname",placeholder="zh name...",id="form-cname")
+                  button.btn(type="submit") submit!
+
+          div.row
+            div.col-sm-6.col-sm-offset-3.social-login
+              h3
+                | Already have an account,
+                a(href="/login/page") go to login
+              div.social-login-buttons
+                a.btn.btn-link-1.btn-link-1-facebook(href="#")
+                  i.fa.fa-facebook Facebook
+                a.btn.btn-link-1.btn-link-1-twitter(href="#")
+                  i.fa.fa-twitter Twitter
+                a.btn.btn-link-1.btn-link-1-google-plus(href="#")
+                  i.fa.fa-google-plus Google Plus
+
+    div.backstretch(style="left: 0px; top: 0px; overflow: hidden; height: 100%; width: 100%; z-index: -999999; position: fixed;")
+      img(src="/pc/img/users/login/login_bg.jpg",style="position: absolute; margin: 0px; padding: 0px; border: none; width: 100%; height: 100%; max-height: none; max-width: none; z-index: -999999; left: 0px; top: 0;")
+
+    script(src='/plugins/jquery-1.12.4.min.js')
+    script(src='/plugins/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='/pc/js/users/register.min.js')
+
+

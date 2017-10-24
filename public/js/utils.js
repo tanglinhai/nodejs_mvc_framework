@@ -1,4 +1,16 @@
 module.exports = {
+    alert: (message) => {
+        var errorTips = $(`<div class="alert alert-danger p2peye-fe-message" role="alert">${message}</div>`);
+        $('body').append(errorTips);
+        setTimeout(function(){
+            errorTips.animate({
+                'top': '-100px',
+                'opacity': 0
+            }, 1000, function(){
+                errorTips.remove();
+            });
+        }, 2000);
+    },
     getMax: (x, y) => {
         return Math.max(x,y);
     },
