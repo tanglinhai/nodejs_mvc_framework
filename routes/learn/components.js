@@ -12,6 +12,8 @@ router.get("/(:page)?",(req,res,next)=>{
         }else{
             res.render('learn/components/index', result);
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 
@@ -27,6 +29,8 @@ router.post("/getComponents",(req,res,next)=>{
         }else{
             res.json(result);
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 
@@ -39,6 +43,8 @@ router.get("/detail/:id",(req,res,next)=>{
         }else{
             res.render('learn/components/detail', {component:result});
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 
@@ -51,6 +57,8 @@ router.post('/uploadComponent/', (req, res, next)=>{
         }else{
             res.redirect('/users/userCenter/');
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 
@@ -64,6 +72,8 @@ router.get('/delComponent/:id', (req, res, next)=>{
         }else{
             res.redirect('/users/userCenter/');
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 

@@ -42,6 +42,7 @@ html
                   i.fa.fa-key
               div.form-bottom
                 form.login-form(role="form",action="/login/in",method="post")
+                  input(type="hidden",name="oldreferer",value=referer)
                   div.form-group
                     label.sr-only(for="form-username") Account Name
                     input.form-username.form-control(type="text",name="username",placeholder="Account Name...",id="form-username")

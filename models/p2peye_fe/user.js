@@ -7,7 +7,9 @@ module.exports = function (db, cb) {
         cname : String,
         phone : String,
         email : String,
-        description : String
+        description : String,
+        type : Number,
+        create_date : Date
     });
 
     return cb();

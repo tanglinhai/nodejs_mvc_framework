@@ -6,7 +6,7 @@ const utils = require('../../utils/utils');
 
 /* get to user login page. */
 router.get('/page', (req, res, next)=>{
-  res.render('users/login');
+  res.render('users/login', {referer: req.headers.referer});
 });
 
 /* GET user detail. */
@@ -17,7 +17,11 @@ router.post('/in', (req, res, next)=> {
     }else{
       if(result.data){
         req.session.user = result.data;
-        res.redirect('/');
+        let old_url = req.body.oldreferer;
+        if(old_url.indexOf('login/page') > -1 || old_url.indexOf('register/page') > -1){
+          old_url = '/';
+        }
+        res.redirect(old_url);
       }else{
         res.locals.loginResult = {
           message: result.message
@@ -26,11 +30,17 @@ router.post('/in', (req, res, next)=> {
       }
 
     }
+  }, (err)=>{
+    return next(err);
   });
 });
 router.get('/out', (req, res, next)=> {
   req.session.user = null;
-  res.redirect('/');
+  var old_url = req.headers.referer;
+  if(old_url.indexOf('login/page') > -1 || old_url.indexOf('register/page') > -1){
+    old_url = '/';
+  }
+  res.redirect(old_url);
 });
 
 

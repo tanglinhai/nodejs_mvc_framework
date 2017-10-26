@@ -8,16 +8,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const rfs = require('rotating-file-stream');
-
-const index = require('./routes/index');
-const learn_index = require('./routes/learn/index');
-const components = require('./routes/learn/components');
-const websites = require('./routes/learn/websites');
-const plugins = require('./routes/learn/plugins');
-const login = require('./routes/users/login');
-const register = require('./routes/users/register');
-const users = require('./routes/users/users');
-
+const routes = require('./routes/routes');
 const app = express();
 
 const sessionConfig = require('./config/session');
@@ -45,19 +36,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session(sessionConfig));
 app.use(express.static(path.join(__dirname, 'public')));
+//save user in session
 app.use((req, res, next)=>{
   res.locals.user = req.session.user || null;
   next();
 });
-app.use('/', index);
-app.use('/login', login);
-app.use('/register', register);
-app.use('/users', users);
-app.use('/learn', learn_index);
-app.use('/learn/components', components);
-app.use('/learn/websites', websites);
-app.use('/learn/plugins', plugins);
-
+//tackle each route
+routes.forEach(o => {
+  app.use(o[0], o[1]);
+});
 // catch 404 and forward to error handler
 app.use((req, res, next)=>{
   const err = new Error('Not Found');
@@ -76,8 +63,8 @@ app.use((err, req, res, next)=>{
   res.render('error');
 });
 
-process.on('uncaughtException', (err) => {
+/*process.on('uncaughtException', (err) => {
   logger.error('捕获到错误',err);
-});
+});*/
 
 module.exports = app;

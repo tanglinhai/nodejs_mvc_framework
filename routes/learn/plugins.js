@@ -12,6 +12,8 @@ router.get("/(:page)?",(req,res,next)=>{
         }else{
             res.render('learn/plugins/index', result);
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 /* get plugins  */
@@ -26,6 +28,8 @@ router.post("/getPlugins",(req,res,next)=>{
         }else{
             res.json(result);
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 /* go to plugin detail page */
@@ -37,6 +41,8 @@ router.get("/detail/:id",(req,res,next)=>{
         }else{
             res.render('learn/plugins/detail', {plugin:result});
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 
@@ -49,6 +55,8 @@ router.post('/uploadPlugin/', (req, res, next)=>{
         }else{
             res.redirect('/users/userCenter/');
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 
@@ -62,6 +70,8 @@ router.get('/delPlugin/:id', (req, res, next)=>{
         }else{
             res.redirect('/users/userCenter/');
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 

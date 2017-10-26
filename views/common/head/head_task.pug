@@ -5,13 +5,17 @@ header.navbar.navbar-static-top.bs-docs-nav
     nav.collapse.navbar-collapse
       ul.nav.navbar-nav
         li
-          a(href="/learn") 园地首页
+          a(href="/task") 任务首页
         li
-          a(href="/learn/components") 组件
+          if locals.user
+            a(href="/task/myList") 我的任务列表
+          else
+            a(href="/login/page") 我的任务列表
         li
-          a(href="/learn/plugins") JavaScript 插件
-        li
-          a(href="/learn/websites") 网站实例
+          if locals.user
+            a(href="/task/addPage") 创建任务
+          else
+            a(href="/login/page") 创建任务
 
       ul.nav.navbar-nav.navbar-right
         li

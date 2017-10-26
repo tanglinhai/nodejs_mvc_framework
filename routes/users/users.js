@@ -27,6 +27,8 @@ router.get('/', (req, res, next)=>{
     }else{
       res.render('users/list', {users: items});
     }
+  }, (err)=>{
+    return next(err);
   });
 });
 
@@ -39,6 +41,8 @@ router.get('/getUser/:id', (req, res, next)=>{
     }else{
       res.render('users/info', {user: item});
     }
+  }, (err)=>{
+    return next(err);
   });
 });
 
@@ -51,6 +55,8 @@ router.get('/delete/:id', (req, res, next)=>{
     }else{
       res.redirect('/users');
     }
+  }, (err)=>{
+    return next(err);
   });
 });
 
@@ -69,6 +75,8 @@ router.post('/addUser', (req, res, next)=>{
     }else{
       res.redirect('/users');
     }
+  }, (err)=>{
+    return next(err);
   });
 });
 
@@ -82,6 +90,8 @@ router.get('/userCenter/', (req, res, next)=>{
     }else{
       res.render('users/userCenter/index', result);
     }
+  }, (err)=>{
+    return next(err);
   });
 });
 

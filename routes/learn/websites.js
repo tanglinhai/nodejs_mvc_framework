@@ -12,6 +12,8 @@ router.get("/(:page)?",(req,res,next)=>{
         }else{
             res.render('learn/websites/index', result);
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 /* get websites  */
@@ -26,6 +28,8 @@ router.post("/getWebsites",(req,res,next)=>{
         }else{
             res.json(result);
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 /* userCenter uploadWorks. */
@@ -37,6 +41,8 @@ router.post('/uploadWebsite/', (req, res, next)=>{
         }else{
             res.redirect('/users/userCenter/');
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 
@@ -50,6 +56,8 @@ router.get('/delWebsite/:id', (req, res, next)=>{
         }else{
             res.redirect('/users/userCenter/');
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 

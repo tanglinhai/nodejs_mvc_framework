@@ -41,7 +41,9 @@ module.exports={
                                 phone: phone,
                                 description: description,
                                 name: name,
-                                cname: cname
+                                cname: cname,
+                                type: 1,
+                                create_date: new Date()
                             }, function(err, item) {
                                 if (err) resolve({
                                     code: 200,

@@ -11,7 +11,8 @@ module.exports = {
     './pc/js/users/add.min.js': './pc/js/users/add.js',
     './pc/js/users/userCenter/index.min.js': './pc/js/users/userCenter/index.js',
 
-
+    //task
+    './pc/js/task/index.min.js': './pc/js/task/index.js',
 
     //learn
     './pc/js/learn/index.min.js': './pc/js/learn/index.js',
@@ -44,7 +45,8 @@ module.exports = {
     './pc/css/users/add.css': './pc/css/users/add.scss',
     './pc/css/users/userCenter/index.css': './pc/css/users/userCenter/index.scss',
 
-
+    //task
+    './pc/css/task/index.css': './pc/css/task/index.scss',
     //learn
     './pc/css/learn/index.css': './pc/css/learn/index.scss',
     //components

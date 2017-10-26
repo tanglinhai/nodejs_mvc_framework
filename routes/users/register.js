@@ -26,6 +26,8 @@ router.post('/submit', (req, res, next)=> {
             }
 
         }
+    }, (err)=>{
+        return next(err);
     });
 });
 
